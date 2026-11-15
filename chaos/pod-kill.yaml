@@ -1,0 +1,16 @@
+# Kills one app pod in the demo namespace.
+# Change this file and commit. Do not edit the live experiment with kubectl.
+apiVersion: chaos-mesh.org/v1alpha1
+kind: PodChaos
+metadata:
+  name: demo-pod-kill
+  namespace: demo
+spec:
+  action: pod-kill
+  mode: one
+  selector:
+    namespaces:
+      - demo
+    labelSelectors:
+      app: ai-devops-live
+  duration: 30s

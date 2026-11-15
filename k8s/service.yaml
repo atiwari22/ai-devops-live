@@ -1,0 +1,15 @@
+# In-cluster Service for the demo app. External exposure is a later change.
+apiVersion: v1
+kind: Service
+metadata:
+  name: ai-devops-live
+  namespace: demo
+  labels:
+    app: ai-devops-live
+spec:
+  selector:
+    app: ai-devops-live
+  ports:
+    - name: http
+      port: 80
+      targetPort: http

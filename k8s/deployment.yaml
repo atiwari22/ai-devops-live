@@ -1,0 +1,33 @@
+# Change the image by editing this file and committing.
+# Do not kubectl set image or kubectl edit.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ai-devops-live
+  namespace: demo
+  labels:
+    app: ai-devops-live
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ai-devops-live
+  template:
+    metadata:
+      labels:
+        app: ai-devops-live
+    spec:
+      containers:
+        - name: app
+          image: ghcr.io/atiwari22/ai-devops-live:demo
+          ports:
+            - name: http
+              containerPort: 8080
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: http
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: http

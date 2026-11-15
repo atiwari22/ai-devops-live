@@ -1,0 +1,6 @@
+# Copy to terraform.tfvars for local apply. That copy is gitignored.
+# Do not put access keys or other secrets in either file.
+aws_region   = "ap-south-1"
+project_name = "ai-devops-live"
+owner        = "abhtiwar"
+environment  = "demo"

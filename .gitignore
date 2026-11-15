@@ -1,0 +1,33 @@
+# Secrets. Real values stay out of git. See CLAUDE.md.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials
+credentials.json
+
+# Terraform local state and downloaded providers.
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Variable files can hold secrets. The example file is safe to commit.
+*.tfvars
+*.tfvars.json
+!*.tfvars.example
+
+# Local tooling.
+.DS_Store
+.idea/
+.vscode/
+__pycache__/
+*.pyc
+.venv/
+venv/
+node_modules/

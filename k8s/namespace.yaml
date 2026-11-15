@@ -1,0 +1,7 @@
+# App namespace. All manifests in this directory target demo.
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: demo
+  labels:
+    app: ai-devops-live

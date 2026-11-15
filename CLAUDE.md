@@ -36,7 +36,7 @@ Set the same tags as `default_tags` on the AWS provider so new resources inherit
 ```hcl
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
-  version = "5.21.0" # pin; do not use a branch or a range
+  version = "6.7.3" # pin; do not use a branch or a range
 
   name = "ai-devops-live"
   cidr = "10.0.0.0/16"
